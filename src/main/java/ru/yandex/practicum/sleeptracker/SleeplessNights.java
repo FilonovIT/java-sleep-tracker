@@ -4,8 +4,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.LongStream;
 
 public class SleeplessNights {
 
@@ -26,7 +24,6 @@ public class SleeplessNights {
         // Последняя потенциальная ночь
         LocalDate lastNight = lastEnd.toLocalDate();
 
-        long totalNights = firstNight.datesUntil(lastNight.plusDays(1)).count();
 
         long sleepless = firstNight.datesUntil(lastNight.plusDays(1))
                 .filter(night -> !hasSleepDuringNight(sessions, night))
