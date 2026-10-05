@@ -9,7 +9,7 @@ public class ChronotypeAnalyzer {
 
     public static final SleepAnalysisFunction CHRONOTYPE = sessions -> {
         // Фильтруем только ночные сессии (исключаем дневные)
-        List<SleepSession> nightSessions = sessions.stream()
+        final List<SleepSession> nightSessions = sessions.stream()
                 .filter(ChronotypeAnalyzer::isNightSession)
                 .collect(Collectors.toList());
 
